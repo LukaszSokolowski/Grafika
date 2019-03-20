@@ -8,3 +8,13 @@ C:\Users\Lukasz\source\repos\Grafika\Grafika\obj\Debug\Grafika.csproj.GenerateRe
 C:\Users\Lukasz\source\repos\Grafika\Grafika\obj\Debug\Grafika.csproj.CoreCompileInputs.cache
 C:\Users\Lukasz\source\repos\Grafika\Grafika\obj\Debug\Grafika.exe
 C:\Users\Lukasz\source\repos\Grafika\Grafika\obj\Debug\Grafika.pdb
+C:\Users\Lukasz\Documents\Grafika\Grafika\bin\Debug\Grafika.exe.config
+C:\Users\Lukasz\Documents\Grafika\Grafika\bin\Debug\Grafika.exe
+C:\Users\Lukasz\Documents\Grafika\Grafika\bin\Debug\Grafika.pdb
+C:\Users\Lukasz\Documents\Grafika\Grafika\obj\Debug\Grafika.csprojAssemblyReference.cache
+C:\Users\Lukasz\Documents\Grafika\Grafika\obj\Debug\Grafika.Form1.resources
+C:\Users\Lukasz\Documents\Grafika\Grafika\obj\Debug\Grafika.Properties.Resources.resources
+C:\Users\Lukasz\Documents\Grafika\Grafika\obj\Debug\Grafika.csproj.GenerateResource.cache
+C:\Users\Lukasz\Documents\Grafika\Grafika\obj\Debug\Grafika.csproj.CoreCompileInputs.cache
+C:\Users\Lukasz\Documents\Grafika\Grafika\obj\Debug\Grafika.exe
+C:\Users\Lukasz\Documents\Grafika\Grafika\obj\Debug\Grafika.pdb
