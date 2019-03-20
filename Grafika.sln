@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grafika", "Grafika\Grafika.csproj", "{DAFA7FA1-6B65-4E0E-AAA6-40E213AE1B17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAFA7FA1-6B65-4E0E-AAA6-40E213AE1B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAFA7FA1-6B65-4E0E-AAA6-40E213AE1B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAFA7FA1-6B65-4E0E-AAA6-40E213AE1B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAFA7FA1-6B65-4E0E-AAA6-40E213AE1B17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA45C5A3-B123-41F8-84B9-649AAD5D4A10}
+	EndGlobalSection
+EndGlobal
