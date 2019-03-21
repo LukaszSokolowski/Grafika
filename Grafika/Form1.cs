@@ -10,8 +10,8 @@ using System.Windows.Forms;
 
 namespace Grafika {
     public partial class Form1 : Form {
-        private int bitmapWidth = 200;
-        private int bitmapHeight = 200;
+        private int bitmapWidth = 500;
+        private int bitmapHeight = 500;
         int x1 = 0;
         int y1 = 0;
         int x2 = 0;
@@ -19,6 +19,7 @@ namespace Grafika {
 
          private bool isValidInput() {
             bool valid = true;
+
             if (Int32.TryParse(textBox1.Text, out x1))
             {
                 Console.WriteLine(x1);
@@ -66,6 +67,15 @@ namespace Grafika {
                 textBox4.BackColor = Color.Red;
                 valid = false;
             }
+            if ((x1<500 && x1>=0) && (x2 < 500 && x2 >= 0) && (y1 < 500 && y1 >= 0) && (y2 < 500 && y2 >= 0)){
+                label7.Hide();
+                Console.WriteLine("OK");
+            } else
+            {
+                Console.WriteLine("Błąd123");
+                label7.Show();
+                valid = false;
+            }
 
             return valid;
         }
@@ -73,6 +83,7 @@ namespace Grafika {
         public Form1(){
             InitializeComponent();
             pictureBox1.BackColor = Color.Tomato;
+            label7.Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e) {
@@ -80,11 +91,12 @@ namespace Grafika {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-
             bool isValidInput = Program.form1.isValidInput();
 
             if (isValidInput) {
                 Bitmap image1 = new Bitmap(bitmapWidth, bitmapHeight);
+
+                /*
                 int x, y;
 
                 for (x = 0; x < image1.Width; x++)
@@ -96,6 +108,9 @@ namespace Grafika {
                         image1.SetPixel(x, y, newColor);
                     }
                 }
+                */
+                image1.SetPixel(x1, y1, Color.Black);
+                image1.SetPixel(x2, y2, Color.Black);
                 pictureBox1.Image = image1;
             } else {
                 Console.WriteLine("BŁĄD");
@@ -112,6 +127,11 @@ namespace Grafika {
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
