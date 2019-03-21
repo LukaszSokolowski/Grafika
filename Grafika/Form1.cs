@@ -10,8 +10,8 @@ using System.Windows.Forms;
 
 namespace Grafika {
     public partial class Form1 : Form {
-        private int bitmapWidth = 500;
-        private int bitmapHeight = 500;
+        private int bitmapWidth = 501;
+        private int bitmapHeight = 501;
         int x1 = 0;
         int y1 = 0;
         int x2 = 0;
@@ -67,7 +67,7 @@ namespace Grafika {
                 textBox4.BackColor = Color.Red;
                 valid = false;
             }
-            if ((x1<500 && x1>=0) && (x2 < 500 && x2 >= 0) && (y1 < 500 && y1 >= 0) && (y2 < 500 && y2 >= 0)){
+            if ((x1<=500 && x1>=0) && (x2 <=500 && x2 >= 0) && (y1 <=500 && y1 >= 0) && (y2 <=500 && y2 >= 0)){
                 label7.Hide();
                 Console.WriteLine("OK");
             } else
@@ -84,6 +84,9 @@ namespace Grafika {
             InitializeComponent();
             pictureBox1.BackColor = Color.Tomato;
             label7.Hide();
+            label8.Hide();
+            checkBox1.Checked = true;
+      
         }
 
         private void pictureBox1_Click(object sender, EventArgs e) {
@@ -93,9 +96,24 @@ namespace Grafika {
         private void button1_Click(object sender, EventArgs e) {
             bool isValidInput = Program.form1.isValidInput();
 
+            if (checkBox1.Checked)
+            {
+                Console.WriteLine("Rysuj przyrostowym");
+                label8.Hide();
+            }
+            else if (checkBox2.Checked)
+            {
+                Console.WriteLine("Rysuj z punktem środkowym");
+                label8.Hide();
+            }
+            else
+            {
+                label8.Show();
+                isValidInput = false;
+            }
+
             if (isValidInput) {
                 Bitmap image1 = new Bitmap(bitmapWidth, bitmapHeight);
-
                 /*
                 int x, y;
 
@@ -134,6 +152,35 @@ namespace Grafika {
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                checkBox2.Checked = false;
+            }
+            else
+            {
+              //  checkBox1.Checked = true;        
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox1.Checked = false;
+            }
+            else
+            {
+               // checkBox2.Checked = true;
+            }
         }
     }
 }
