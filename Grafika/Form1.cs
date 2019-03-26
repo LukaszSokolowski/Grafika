@@ -95,44 +95,93 @@ namespace Grafika {
 
         private void button1_Click(object sender, EventArgs e) {
             bool isValidInput = Program.form1.isValidInput();
+            Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight);
 
-            if (checkBox1.Checked)
+            if (checkBox1.Checked && isValidInput)
             {
                 Console.WriteLine("Rysuj przyrostowym");
                 label8.Hide();
+/*
+                double dist1, dist2;
+
+                dist1 = Math.Sqrt(Math.Pow(x1, 2) + Math.Pow(y1, 2));
+                dist2 = Math.Sqrt(Math.Pow(x2, 2) + Math.Pow(y2, 2));
+                if (dist1>dist2)
+                {
+                    int swap = x2;
+                    x2 = x1;
+                    x1 = swap;
+
+                    swap = y2;
+                    y2 = y1;
+                    y1 = swap;
+
+                }
+*/
+                float dy, dx,x, y, step;
+                dy = y2 - y1;
+                dx = x2 - x1;
+
+                if (dx >= dy)
+                    step = dx;
+                else
+                    step = dy;
+
+                dx = dx / step;
+                dy = dy / step;
+                x = x1;
+                y = y1;
+                int i = 1;
+                while (i <= step)
+                {
+                    bitmap.SetPixel((int)Math.Floor(x), (int)Math.Floor(y), Color.Black);
+                    x += dx;
+                    y += dy;
+                    i++;
+                }
+                pictureBox1.Image = bitmap;
+
             }
-            else if (checkBox2.Checked)
+            else if (checkBox2.Checked && isValidInput)
             {
                 Console.WriteLine("Rysuj z punktem środkowym");
                 label8.Hide();
+
+                int dX, dY, g, h, c;
+
+                  dX = x2-x1;
+                  if ( dX > 0 ) g = +1; else g = -1;
+                  dX = Math.Abs(dX);
+                  dY = y2-y1;
+                  if ( dY > 0 ) h = +1; else h = -1;
+                  dY = Math.Abs(dY);
+                  if ( dX > dY ) {
+                    c = -dX;
+                    while ( x1 != x2 ) {
+                      bitmap.SetPixel( x1, y1, Color.Black );
+                      c += 2*dY;
+                      if ( c > 0 ) { y1 += h; c -= 2*dX; }
+                      x1 += g;
+                    }
+                  }
+                  else {
+                    c = -dY;
+                    while ( y1 != y2 ) {
+                      bitmap.SetPixel( x1, y1, Color.Black );
+                      c += 2*dX;
+                      if ( c > 0 ) { x1 += g; c -= 2*dY; }
+                      y1 += h;
+                    }
+                  }
+
+                pictureBox1.Image = bitmap;
             }
             else
             {
                 label8.Show();
                 isValidInput = false;
             }
-
-            if (isValidInput) {
-                Bitmap image1 = new Bitmap(bitmapWidth, bitmapHeight);
-                /*
-                int x, y;
-
-                for (x = 0; x < image1.Width; x++)
-                {
-                    for (y = 0; y < image1.Height; y++)
-                    {
-                        Color pixelColor = image1.GetPixel(x, y);
-                        Color newColor = Color.FromArgb(pixelColor.R, 0, 0);
-                        image1.SetPixel(x, y, newColor);
-                    }
-                }
-                */
-                image1.SetPixel(x1, y1, Color.Black);
-                image1.SetPixel(x2, y2, Color.Black);
-                pictureBox1.Image = image1;
-            } else {
-                Console.WriteLine("BŁĄD");
-            }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e) {
